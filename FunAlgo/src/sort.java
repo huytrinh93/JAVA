@@ -18,12 +18,16 @@ public class sort {
 		int[] array5 = array1.clone();
 		printArray(array1);
 		array2 = BubbleSort(array2);
+		System.out.print("Bubble Sort");
 		printArray(array2);
 		array3 = InsertionSort(array3);
+		System.out.print("Insertion Sort");
 		printArray(array3);
 		array4 = SelectionSort(array4);
+		System.out.print("Selection Sort");
 		printArray(array4);
 		BucketSort(array5,100);
+		System.out.print("Bucket Sort");
 		printArray(array5);
 	}
 	
@@ -49,7 +53,7 @@ public class sort {
 	}
 	
 	private static int[] BubbleSort(int[] array){
-		System.out.println("Bubble");
+		System.out.println();
 		int[] arrayTest=array;
 		for(int i = 0 ; i<arrayTest.length ; i++)
 		{
@@ -58,7 +62,7 @@ public class sort {
 				if(arrayTest[j] > arrayTest[j+1])
 				{
 					swap(j,j+1,arrayTest);
-					printArray(arrayTest);
+					//printArray(arrayTest);
 				}
 			}
 		}
@@ -66,7 +70,7 @@ public class sort {
 	}
 	
 	private static int[] SelectionSort(int[] array){
-		System.out.println("Selection");
+		System.out.println();
 		int smallest_index=0;
 		
 		for(int i = 0; i <array.length;i++)
@@ -88,7 +92,8 @@ public class sort {
 	}
 	
 	private static int[] InsertionSort(int[] array){
-        for (int j = 1; j < array.length; j++) {
+		System.out.println();
+		for (int j = 1; j < array.length; j++) {
             int index = array[j];
             int i = j-1;
             while ( (i > -1) && ( array [i] > index ) ) {
@@ -96,7 +101,7 @@ public class sort {
                 i--;
             }
             array[i+1] = index;
-            printArray(array);
+           // printArray(array);
         }
         return array;
 	}
@@ -104,7 +109,6 @@ public class sort {
 
 	   public static void BucketSort(int[] a, int maxVal) {
 		   System.out.println();
-		   System.out.println("bucket sort start");
 		   //assume bucket sort start from 0 - maxVal
 		   //create maxVal+1 bucket
 		   int[] bucket = new int[maxVal+1];
@@ -124,8 +128,6 @@ public class sort {
 		   for (int i=0; i<bucket.length;i++)
 			   for(int j=0; j<bucket[i];j++)
 				   a[outpos++]=i;
-		   
-		   System.out.println("bucket sort end");
 	   }
 	
 	private static int[] MergeSort(int[] array){
