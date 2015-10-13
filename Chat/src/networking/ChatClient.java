@@ -124,5 +124,6 @@ public class ChatClient {
         client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         client.frame.setVisible(true);
         client.run();
+        
     }
 }
